@@ -4,8 +4,11 @@ Created on Mon Feb 16 12:00:56 2015
 
 @author: msacchi
 """
+
+from numba import jit
 import numpy as np
 
+@jit(nopython=True)
 def radon_adjoint(d,Nt,dt,Nh,h,Np,p,href):
 
 # Adjoint Time-domain Parabolic Radon Operator
@@ -33,6 +36,7 @@ def radon_adjoint(d,Nt,dt,Nh,h,Np,p,href):
     
     return m
         
+
 def radon_forward(m,Nt,dt,Nh,h,Np,p,href):
 
 # Forward Time-domain Parabolic Radon Transform
@@ -89,41 +93,6 @@ def radon_cg(d,m0,Nt,dt,Nh,h,Np,p,href,Niter):
          pp = r + beta*pp
          q = radon_forward(pp,Nt,dt,Nh,h,Np,p,href) # q=L pp
            
-    return m 
-
-
-def radon_IRLS(d,m0,Nt,dt,Nh,h,Np,p,href,Niter):
-         
-# LS Radon transform. Finds the Radon coefficients by minimizing
-# ||L m - d||_2^2 where L is the forward Parabolic Radon Operator.
-# The solution is found via CGLS with operators L and L^T applied on the
-# flight.
-# This is one is with 3 IRLS interations for sparsity 
-# M D Sacchi, 2021,  Email: msacchi@ualberta.ca
-
-
-    m = m0 
-    
-    for k in range(0,3)
-        s = d-radon_forward(m,Nt,dt,Nh,h,Np,p,href) # d - Lm
-        pp = radon_adjoint(s,Nt,dt,Nh,h,Np,p,href)  # pp = L's 
-        r = pp
-        q = radon_forward(pp,Nt,dt,Nh,h,Np,p,href)
-        old = np.sum(np.sum(r*r))
-        print("iter","  res")
-
-        for k in range(0,Niter):
-             alpha = np.sum(np.sum(r*r))/np.sum(np.sum(q*q))
-             m +=  alpha*pp
-             s -=  alpha*q
-             r = radon_adjoint(s,Nt,dt,Nh,h,Np,p,href)  # r= L's
-             new = np.sum(np.sum(r*r))
-             print(k, new)
-             beta = new/old
-             old = new
-         pp = r + beta*pp
-         q = radon_forward(pp,Nt,dt,Nh,h,Np,p,href) # q=L pp
-         
     return m 
 
 
