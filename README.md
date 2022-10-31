@@ -21,7 +21,7 @@ $$ m' = L' d \quad \equiv \quad m'(\tau,q) = \sum_x d(\tau+q x^2,x) $$
 
 The parameter $q x^2$ is replaced by $q (x/x_{max})^2$. Then, the variable $q$ is residual moveout at far offset and it is measured in seconds.
 
-to run the program use: `python main.py`. You will first need to install  the following libraries `numba`, `numpy` and `matplotlib`.
+Running the program: `python main.py`. You will first need to install  the following libraries `numba`, `numpy` and `matplotlib`.
 
 
 *Reference:* D Trad, T Ulrych, M Sacchi, 2003, Latest views of the sparse Radon transform: Geophysics 68 (1), 386-399.
