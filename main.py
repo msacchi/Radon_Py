@@ -10,7 +10,7 @@ Np = 40         # Curvatures
 Nt = 250
 Nh = 25
 dt = 4./1000.
-dh = 30. 
+dh = 20. 
 
 p = np.linspace(-0.1,.2,Np)
 h = np.linspace(0,(Nh-1)*dh,Nh)
