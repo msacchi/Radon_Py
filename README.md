@@ -21,8 +21,8 @@ The parameter $q x^2$ is replaced by $q (x/x_{max})^2$. Then, the variable $q$ i
 
 Running the program: `python main.py`. You will first need to install  the following libraries `numba`, `numpy` and `matplotlib`.
 
-You can modify the code to also compute linear and hyperbolic Radon transforms. In those
-case, the integration path $\tau + q x^2$ is replaced by $\tau +  p x$ and $\sqrt{\tau^2 + (x/v)^2}$. Then we can estimate eiehter $m(\tau,p)$ (Linear Radon Transform)
-or $m(\tau,v)$ (Hyperpolic Radon Transform also called Velocity Stack).
+You can modify the code to also compute Linear and Hyperbolic Radon Transforms. In those
+cases, the integration path $\tau + q x^2$ is replaced by $\tau +  p x$ or $\sqrt{\tau^2 + (x/v)^2}$. Then we can estimate either $m(\tau,p)$ (Linear Radon Transform)
+or $m(\tau,v)$ (Hyperbolic Radon Transform also called Velocity Stack).
 
 *Reference:* D Trad, T Ulrych, M Sacchi, 2003, Latest views of the sparse Radon transform: Geophysics 68 (1), 386-399.
