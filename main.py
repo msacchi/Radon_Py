@@ -1,6 +1,11 @@
+"""
+ Parabolic Radon Transform via a time domain code
 
-# Parabolic Radon Transform / Time domain code
-# ------------------------------------------
+ M D Sacchi
+ SAIG / University of Alberta
+  
+"""
+
 import sys  
 sys.path.append('./src')   
 
