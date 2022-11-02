@@ -80,7 +80,7 @@ def radon_cg(d,m0,Nt,dt,Nh,h,Np,p,href,Niter):
     q = radon_forward(pp,Nt,dt,Nh,h,Np,p,href)
     old = np.sum(np.sum(r*r))
     print("iter","  res")
-
+    
     for k in range(0,Niter):
          alpha = np.sum(np.sum(r*r))/np.sum(np.sum(q*q))
          m +=  alpha*pp
