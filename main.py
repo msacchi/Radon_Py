@@ -6,8 +6,8 @@
   
 """
 
-import sys  
-sys.path.append('./src')   
+#import sys  
+#sys.path.append('./src')   
 
 import numpy as np
 import src.radon_lib as rl
@@ -32,7 +32,7 @@ f0 = 14
 wavelet = seismic.ricker(dt,f0)
 
 Nw = len(wavelet)
-href=h[Nh-1]
+href = h[Nh-1]
 
 m[40:40+Nw,20]=wavelet
 m[90:90+Nw,24]=-wavelet
