@@ -14,7 +14,7 @@ import src.radon_lib as rl
 import src.seismic_lib as seismic
 import matplotlib.pyplot as plt
 
-Np = 40         # Curvatures
+Np = 55        # Curvatures
 Nt = 250
 Nh = 25
 dt = 4./1000.
